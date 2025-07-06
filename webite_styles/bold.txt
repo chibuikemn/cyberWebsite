@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Navigation Bar</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                background: linear-gradient(135deg, #2C003E, #3D0066);
+                font-family: Arial, sans-serif;
+                min-height: 100vh;
+            }
+
+            .navbar {
+                background-color: rgba(255, 255, 255, 0.1);
+                padding: 1rem 0;
+                position: sticky;
+                top: 0;
+                backdrop-filter: blur(10px);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            }
+
+            .navdiv {
+                max-width: 1200px;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 2rem;
+            }
+
+            .logo a {
+                color: #F4F4F4;
+                text-decoration: none;
+                font-size: 1.8rem;
+                font-weight: bold;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            }
+
+            .logo .safe {
+                font-family: 'Arial', sans-serif;
+                font-weight: bold;
+            }
+
+            .logo .port {
+                font-family: 'Georgia', serif;
+                font-style: italic;
+                color: #FF1493;
+            }
+
+            .navdiv ul {
+                display: flex;
+                list-style: none;
+                align-items: center;
+                gap: 2rem;
+            }
+
+            .navdiv ul li a {
+                color: #EAEAEA;
+                text-decoration: none;
+                padding: 0.5rem 1rem;
+                border-radius: 5px;
+                transition: all 0.3s ease;
+            }
+
+            .navdiv ul li a:hover {
+                background-color: rgba(255, 20, 147, 0.2);
+                color: #FF1493;
+                transform: translateY(-2px);
+            }
+
+            .navdiv ul button {
+                background: linear-gradient(45deg, #FF1493, #FF69B4);
+                border: none;
+                padding: 0.7rem 1.5rem;
+                border-radius: 25px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                box-shadow: 0 4px 15px rgba(255, 20, 147, 0.4);
+            }
+
+            .navdiv ul button:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 6px 20px rgba(255, 20, 147, 0.6);
+                background: linear-gradient(45deg, #FF69B4, #FF1493);
+            }
+
+            .navdiv ul button a {
+                color: white;
+                text-decoration: none;
+                font-weight: bold;
+            }
+
+            /* Responsive design */
+            @media (max-width: 768px) {
+                .navdiv {
+                    flex-direction: column;
+                    gap: 1rem;
+                }
+                
+                .navdiv ul {
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    gap: 1rem;
+                }
+            }
+
+            /* Additional content styling */
+            .content {
+                padding: 4rem 2rem;
+                text-align: center;
+                max-width: 800px;
+                margin: 0 auto;
+            }
+
+            h1 {
+                color: #F4F4F4;
+                font-size: 3rem;
+                margin-bottom: 1rem;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            }
+
+            h2 {
+                color: #FF1493;
+                font-size: 1.5rem;
+                margin-bottom: 2rem;
+                letter-spacing: 2px;
+            }
+
+            p {
+                color: #EAEAEA;
+                font-size: 1.1rem;
+                line-height: 1.6;
+                opacity: 0.9;
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="navdiv">
+                <div class="logo"><a href="#"><span class="safe">Safe</span><span class="port">Port</span></a></div>
+                <ul>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Why Choose Us</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <button><a href="#">Get Started</a></button>
+                </ul>
+            </div>
+        </nav>
+        
+        <div class="content">
+            <h1><span class="safe">Safe</span><span class="port">Port</span></h1>
+            <h2>ARCHITECT</h2>
+            <p>This website aims to bring light on Kobi and trinities usage of their ipads everyday</p>
+        </div>
+    </body>
+</html>

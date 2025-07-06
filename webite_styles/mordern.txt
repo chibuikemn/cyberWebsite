@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Navigation Bar</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;600&display=swap');
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                background: #F5F3FF;
+                font-family: 'Open Sans', sans-serif;
+                font-weight: 400;
+                min-height: 100vh;
+            }
+
+            .navbar {
+                background-color: rgba(255, 255, 255, 0.8);
+                padding: 1rem 0;
+                position: sticky;
+                top: 0;
+                backdrop-filter: blur(10px);
+                border-bottom: 1px solid rgba(106, 13, 173, 0.1);
+            }
+
+            .navdiv {
+                max-width: 1200px;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 2rem;
+            }
+
+            .logo a {
+                color: #1A1A1A;
+                text-decoration: none;
+                font-size: 1.8rem;
+                font-weight: 700;
+                font-family: 'Montserrat', sans-serif;
+                text-shadow: none;
+            }
+
+            .logo .safe {
+                font-family: 'Montserrat', sans-serif;
+                font-weight: 700;
+            }
+
+            .logo .port {
+                font-family: 'Montserrat', sans-serif;
+                font-weight: 700;
+                color: #6A0DAD;
+            }
+
+            .navdiv ul {
+                display: flex;
+                list-style: none;
+                align-items: center;
+                gap: 2rem;
+            }
+
+            .navdiv ul li a {
+                color: #1A1A1A;
+                text-decoration: none;
+                padding: 0.5rem 1rem;
+                border-radius: 8px;
+                transition: all 0.3s ease;
+                font-family: 'Open Sans', sans-serif;
+                font-weight: 500;
+                letter-spacing: 0.3px;
+            }
+
+            .navdiv ul li a:hover {
+                background-color: rgba(106, 13, 173, 0.1);
+                color: #6A0DAD;
+                transform: translateY(-2px);
+            }
+
+            .navdiv ul button {
+                background: linear-gradient(45deg, #6A0DAD, #8A2BE2);
+                border: none;
+                padding: 0.7rem 1.5rem;
+                border-radius: 25px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                box-shadow: 0 4px 15px rgba(106, 13, 173, 0.3);
+            }
+
+            .navdiv ul button:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 6px 20px rgba(106, 13, 173, 0.4);
+                background: linear-gradient(45deg, #8A2BE2, #6A0DAD);
+            }
+
+            .navdiv ul button a {
+                color: white;
+                text-decoration: none;
+                font-weight: 600;
+                font-family: 'Montserrat', sans-serif;
+                letter-spacing: 0.5px;
+                text-transform: uppercase;
+                font-size: 0.9rem;
+            }
+
+            /* Responsive design */
+            @media (max-width: 768px) {
+                .navdiv {
+                    flex-direction: column;
+                    gap: 1rem;
+                }
+                
+                .navdiv ul {
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    gap: 1rem;
+                }
+            }
+
+            /* Additional content styling */
+            .content {
+                padding: 4rem 2rem;
+                text-align: center;
+                max-width: 800px;
+                margin: 0 auto;
+            }
+
+            h1 {
+                color: #2E2E2E;
+                font-size: 4rem;
+                margin-bottom: 1rem;
+                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+                font-family: 'Playfair Display', serif;
+                font-weight: 900;
+                letter-spacing: -2px;
+                line-height: 1.1;
+            }
+
+            h2 {
+                color: #E8A87C;
+                font-size: 2rem;
+                margin-bottom: 2rem;
+                letter-spacing: 4px;
+                font-family: 'Bebas Neue', cursive;
+                font-weight: 400;
+                text-transform: uppercase;
+            }
+
+            p {
+                color: #5D3A6A;
+                font-size: 1.1rem;
+                line-height: 1.7;
+                opacity: 0.9;
+                font-family: 'Inter', sans-serif;
+                font-weight: 400;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="navdiv">
+                <div class="logo"><a href="#"><span class="safe">Safe</span><span class="port">Port</span></a></div>
+                <ul>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="why-choose-us.html">Why Choose Us</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <button><a href="get-started.html">Get Started</a></button>
+                </ul>
+            </div>
+        </nav>
+        
+        <div class="content">
+            <h1><span class="safe">Safe</span><span class="port">Port</span></h1>
+            <h2>ARCHITECT</h2>
+            <p>This website aims to bring light on Kobi and trinities usage of their ipads everyday</p>
+        </div>
+    </body>
+</html>
