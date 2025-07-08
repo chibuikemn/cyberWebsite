@@ -34,5 +34,123 @@
                 </ul>
             </div>
         </nav>
+        <!-- Form content -->
+        <div class="form-container">
+            <h2 class="form-title">Get Started with <span class="safe">Safe</span><span class="port">Port</span></h2>
+            
+            <form id="getStartedForm">
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="company">Company/Organization</label>
+                    <input type="text" id="company" name="company">
+                </div>
+
+                <div class="form-group">
+                    <label for="securityLevel">Current Security Level</label>
+                    <select id="securityLevel" name="securityLevel" required>
+                        <option value="">Select your current security level</option>
+                        <option value="basic">Basic - Minimal security measures</option>
+                        <option value="intermediate">Intermediate - Some security protocols</option>
+                        <option value="advanced">Advanced - Comprehensive security</option>
+                        <option value="enterprise">Enterprise - Full security infrastructure</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="concerns">Primary Security Concerns</label>
+                    <textarea id="concerns" name="concerns" rows="4" placeholder="Tell us about your main security concerns or what you hope to achieve with SafePort..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="newsletter" name="newsletter" value="yes">
+                        <label for="newsletter">Subscribe to security updates and newsletters</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">Start Security Assessment</button>
+            </form>
+
+            <div id="statusMessage" class="status-message"></div>
+        </div>
+
+        <script>
+            // Form submission handler
+            document.getElementById('getStartedForm').addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const statusMessage = document.getElementById('statusMessage');
+                const formData = new FormData(this);
+                
+                // Convert FormData to regular object
+                const userData = {
+                    fullName: formData.get('fullName'),
+                    email: formData.get('email'),
+                    company: formData.get('company'),
+                    securityLevel: formData.get('securityLevel'),
+                    concerns: formData.get('concerns'),
+                    newsletter: formData.get('newsletter') === 'yes',
+                    timestamp: new Date().toISOString()
+                };
+
+                try {
+                    // This is where you'd make your API call to your backend
+                    // Example using fetch to your Node.js/Express backend:
+                    
+                    const response = await fetch('/api/users/register', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(userData)
+                    });
+
+                    if (response.ok) {
+                        const result = await response.json();
+                        
+                        // Show success message
+                        statusMessage.textContent = 'Registration successful! We\'ll contact you soon to begin your security assessment.';
+                        statusMessage.className = 'status-message status-success';
+                        statusMessage.style.display = 'block';
+                        
+                        // Reset form
+                        this.reset();
+                        
+                        // Optional: Redirect after success
+                        setTimeout(() => {
+                            window.location.href = 'dashboard.html'; // or wherever you want to redirect
+                        }, 3000);
+                        
+                    } else {
+                        throw new Error('Registration failed');
+                    }
+                    
+                } catch (error) {
+                    console.error('Error:', error);
+                    
+                    // Show error message
+                    statusMessage.textContent = 'Registration failed. Please try again or contact support.';
+                    statusMessage.className = 'status-message status-error';
+                    statusMessage.style.display = 'block';
+                }
+            });
+
+            // Hide status message when user starts typing again
+            document.querySelectorAll('input, select, textarea').forEach(field => {
+                field.addEventListener('input', () => {
+                    const statusMessage = document.getElementById('statusMessage');
+                    statusMessage.style.display = 'none';
+                });
+            });
+        </script>
     </body>
 </html>

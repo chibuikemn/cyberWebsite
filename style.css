@@ -314,3 +314,113 @@
                 pointer-events: none;
                 z-index: -1;
             }
+
+            /*This is for the get statred form*/
+            /* Additional styles for the form */
+            .form-container {
+                max-width: 600px;
+                margin: 4rem auto;
+                padding: 3rem;
+                background: rgba(0, 0, 0, 0.6);
+                border-radius: 15px;
+                border: 2px solid rgba(138, 43, 226, 0.4);
+                backdrop-filter: blur(15px);
+                box-shadow: 0 8px 32px rgba(138, 43, 226, 0.2);
+            }
+
+            .form-title {
+                text-align: center;
+                color: #E0E6ED;
+                font-size: 2.5rem;
+                margin-bottom: 2rem;
+                font-family: 'Orbitron', monospace;
+                text-shadow: 0 0 15px rgba(138, 43, 226, 0.6);
+            }
+
+            .form-group {
+                margin-bottom: 2rem;
+            }
+
+            .form-group label {
+                display: block;
+                color: #E0E6ED;
+                font-size: 1.1rem;
+                margin-bottom: 0.5rem;
+                font-weight: 500;
+                letter-spacing: 1px;
+            }
+
+            .form-group input, .form-group select, .form-group textarea {
+                width: 100%;
+                padding: 1rem;
+                background: rgba(30, 30, 30, 0.8);
+                border: 2px solid rgba(138, 43, 226, 0.3);
+                border-radius: 8px;
+                color: #E0E6ED;
+                font-size: 1rem;
+                font-family: 'Rajdhani', sans-serif;
+                transition: all 0.3s ease;
+            }
+
+            .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+                outline: none;
+                border-color: #8A2BE2;
+                box-shadow: 0 0 15px rgba(138, 43, 226, 0.4);
+                background: rgba(40, 40, 40, 0.9);
+            }
+
+            .submit-btn {
+                width: 100%;
+                padding: 1.2rem;
+                background: linear-gradient(135deg, #0F3460, #00FFFF);
+                border: 2px solid #00FFFF;
+                border-radius: 8px;
+                color: #0A0A0A;
+                font-size: 1.1rem;
+                font-weight: 600;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                box-shadow: 0 4px 15px rgba(0, 255, 255, 0.3);
+                font-family: 'Rajdhani', sans-serif;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+            }
+
+            .submit-btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 25px rgba(0, 255, 255, 0.5);
+                background: linear-gradient(135deg, #00FFFF, #0F3460);
+            }
+
+            .status-message {
+                margin-top: 1rem;
+                padding: 1rem;
+                border-radius: 8px;
+                text-align: center;
+                font-weight: 500;
+                display: none;
+            }
+
+            .status-success {
+                background: rgba(46, 160, 67, 0.2);
+                border: 1px solid #2ea043;
+                color: #2ea043;
+            }
+
+            .status-error {
+                background: rgba(248, 81, 73, 0.2);
+                border: 1px solid #f85149;
+                color: #f85149;
+            }
+
+            .checkbox-group {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+            }
+
+            .checkbox-group input[type="checkbox"] {
+                width: auto;
+                margin: 0;
+            }
+            /*the end of the form design*/
