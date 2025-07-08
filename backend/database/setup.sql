@@ -9,6 +9,7 @@
 --\c setup;
 --\dt to see the tables in the database
 --to view a specific table in your database "setup" select * from users;
+--\q to quit
 --DROP DATABASE setup
 
 --DROP Table users;
