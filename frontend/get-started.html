@@ -151,6 +151,16 @@
                     statusMessage.style.display = 'none';
                 });
             });
+
+            document.addEventListener('DOMContentLoaded', () => {
+    const submitBtn = document.querySelector('.submit-btn');
+    if (submitBtn) {
+        submitBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            submitBtn.classList.add('locked');
+        });
+    }
+});
         </script>
     </body>
 </html>

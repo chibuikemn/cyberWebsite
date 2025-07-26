@@ -24,7 +24,12 @@
         <nav class="navbar">
             <div class="navdiv">
                 <div class="logo"><a href="#"><span class="safe">Safe</span><span class="port">Port</span></a></div>
-                <ul>
+                
+                <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+                 ☰
+                </button>
+
+                <ul id="nav-links">
                     <li><a href="Services.html">Services</a></li>
                     <li><a href="why-choose-us.html">Why Choose Us</a></li>
                     <li><a href="About.html">About</a></li>
@@ -164,6 +169,19 @@
             </div>
 
         </div>
+        
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+            const toggle = document.getElementById('menu-toggle');
+            const menu = document.getElementById('nav-links');
+            if (!toggle || !menu) return;
+
+            toggle.addEventListener('click', () => {
+                const open = menu.classList.toggle('show');
+                toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            });
+            });
+        </script>
 
     </body>
    
