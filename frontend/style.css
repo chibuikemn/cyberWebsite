@@ -671,3 +671,57 @@ h2 {
 }
 
 /* End of form design */
+
+/* ===========================
+   Cybersecurity Service Page
+   =========================== */
+
+/* Main container for the entire service content */
+.service-content {
+  padding: 2rem;
+  background-color: #f9f9f9;
+}
+
+/* Each section block in the service page */
+.service-container {
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Titles for each section (e.g. headings like 'Why Cybersecurity Can't Wait') */
+.service-title {
+  font-size: 1.8rem;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+/* Paragraph and list content inside service sections */
+.service-description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #4b5563;
+  margin-bottom: 1rem;
+}
+
+/* Style for blockquote testimonials */
+blockquote.service-description {
+  font-style: italic;
+  color: #374151;
+  background-color: #f0f4f8;
+  border-left: 4px solid #3b82f6;
+  padding: 1rem;
+  margin: 1.5rem 0;
+}
+
+/* Links inside call-to-action section */
+.service-description a {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+.service-description a:hover {
+  color: #1e40af;
+}
