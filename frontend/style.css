@@ -675,53 +675,111 @@ h2 {
 /* ===========================
    Cybersecurity Service Page
    =========================== */
-
-/* Main container for the entire service content */
+/* Main container for all Services content */
 .service-content {
-  padding: 2rem;
-  background-color: #f9f9f9;
+    max-width: 1000px;
+    margin: 8rem auto 5rem;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 15px;
+    border: 2px solid rgba(138, 43, 226, 0.3);
+    box-shadow: 0 6px 20px rgba(138, 43, 226, 0.2);
 }
 
-/* Each section block in the service page */
+/* Each service block section */
 .service-container {
-  margin-bottom: 3rem;
-  padding: 2rem;
-  background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(224, 230, 237, 0.1);
 }
 
-/* Titles for each section (e.g. headings like 'Why Cybersecurity Can't Wait') */
+/* Section titles */
 .service-title {
-  font-size: 1.8rem;
-  color: #1f2937;
-  margin-bottom: 1rem;
+    font-size: 2rem;
+    color: #8A2BE2;
+    margin-bottom: 1rem;
+    font-family: 'Orbitron', monospace;
+    text-shadow: 0 0 10px rgba(138, 43, 226, 0.4);
 }
 
-/* Paragraph and list content inside service sections */
+/* Paragraph and list content */
 .service-description {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: #4b5563;
-  margin-bottom: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #E0E6ED;
+    opacity: 0.9;
+    margin-bottom: 1rem;
+    font-family: 'Rajdhani', sans-serif;
 }
 
-/* Style for blockquote testimonials */
-blockquote.service-description {
-  font-style: italic;
-  color: #374151;
-  background-color: #f0f4f8;
-  border-left: 4px solid #3b82f6;
-  padding: 1rem;
-  margin: 1.5rem 0;
-}
-
-/* Links inside call-to-action section */
+/* Styled links */
 .service-description a {
-  color: #2563eb;
-  text-decoration: underline;
+    color: #00FFFF;
+    text-decoration: underline;
 }
 
 .service-description a:hover {
-  color: #1e40af;
+    color: #8A2BE2;
+}
+
+/* Quote block styling */
+blockquote.service-description {
+    background: rgba(138, 43, 226, 0.1);
+    border-left: 4px solid #8A2BE2;
+    padding: 1rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: #E0E6ED;
+}
+
+/* ===========================
+   About Page Styling
+   =========================== */
+
+/* Container for all About page content */
+.about-container {
+    max-width: 1000px;
+    margin: 8rem auto 5rem;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 15px;
+    border: 2px solid rgba(138, 43, 226, 0.3);
+    box-shadow: 0 6px 20px rgba(138, 43, 226, 0.2);
+}
+
+/* Each section within the About page */
+.about-section {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(224, 230, 237, 0.1);
+}
+
+/* Headings within About sections */
+.about-section h2 {
+    font-size: 2rem;
+    color: #8A2BE2;
+    margin-bottom: 1rem;
+    font-family: 'Orbitron', monospace;
+    text-shadow: 0 0 10px rgba(138, 43, 226, 0.4);
+}
+
+/* Paragraphs and text within About sections */
+.about-section p,
+.about-section li {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #E0E6ED;
+    opacity: 0.9;
+    margin-bottom: 1rem;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+/* Unordered lists inside About sections */
+.about-section ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.about-section ul li {
+    list-style-type: disc;
 }
