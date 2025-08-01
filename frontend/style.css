@@ -783,3 +783,10 @@ blockquote.service-description {
 .about-section ul li {
     list-style-type: disc;
 }
+
+/* ===========================
+   Centered Headings
+   =========================== */
+.centered-heading {
+    text-align: center;
+}
