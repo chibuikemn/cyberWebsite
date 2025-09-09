@@ -191,12 +191,48 @@ p {
 }
 
 /* Input field styling */
-input {
+input,
+select,
+textarea {
   background-color: #eee; /* Light gray background */
   border: none; /* Remove border */
   padding: 12px 15px; /* Internal spacing */
   margin: 8px 0; /* Vertical margins */
   width: 100%; /* Full width */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 14px; /* Font size */
+  font-family: inherit; /* Inherit font family */
+}
+
+select {
+  cursor: pointer; /* Pointer cursor for select */
+}
+
+textarea {
+  resize: vertical; /* Allow vertical resize only */
+  min-height: 60px; /* Minimum height */
+}
+
+.checkbox-label {
+  display: flex; /* Flexbox layout */
+  align-items: center; /* Center vertically */
+  margin: 10px 0; /* Vertical margins */
+  font-size: 14px; /* Font size */
+  color: #333; /* Dark text */
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: auto; /* Auto width for checkbox */
+  margin: 0 8px 0 0; /* Right margin only */
+}
+
+.message {
+  margin-top: 10px; /* Top margin */
+  padding: 8px; /* Internal padding */
+  border-radius: 4px; /* Rounded corners */
+  font-size: 14px; /* Font size */
+  text-align: center; /* Center text */
+  min-height: 20px; /* Minimum height */
 }
 
 /* Button styling */
@@ -212,6 +248,13 @@ button {
   text-transform: uppercase; /* Uppercase text */
   transition: transform 80ms ease-in; /* Quick scale animation */
   cursor: pointer; /* Show pointer cursor */
+  width: 100%; /* Full width */
+  margin-top: 15px; /* Top margin */
+}
+
+button:disabled {
+  opacity: 0.6; /* Reduced opacity when disabled */
+  cursor: not-allowed; /* Not allowed cursor */
 }
 
 /* Button press effect */
@@ -1173,3 +1216,4 @@ blockquote.service-description {
     flex: 1; /* Take available space */
   }
   
+}

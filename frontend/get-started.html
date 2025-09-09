@@ -82,24 +82,36 @@
 <div class="auth-container">
 <div class="container" id="container">
   
-  <!-- Sign Up Form Container (initially hidden on left) -->
-  <div class="form-container sign-up-container">
-    <form>
-      <h2>Create Account</h2> <!-- Form title -->
-      <input type="text" placeholder="Full Name" /> <!-- Text input for name -->
-      <input type="email" placeholder="Email" /> <!-- Email input with validation -->
-      <input type="password" placeholder="Password" /> <!-- Password input (hidden text) -->
-      <button>Sign Up</button> <!-- Submit button for registration -->
+  <!-- Sign In Form Container (initially visible on left) -->
+  <div class="form-container sign-in-container">
+    <form id="loginForm">
+      <h2>Sign In</h2>
+      <input type="email" id="loginEmail" placeholder="Email" required />
+      <button type="submit">Log In</button>
+      <div id="loginMessage" class="message"></div>
     </form>
   </div>
   
-  <!-- Sign In Form Container (initially visible on left) -->
-  <div class="form-container sign-in-container">
-    <form>
-      <h2>Sign In</h2> <!-- Form title -->
-      <input type="email" placeholder="Email" /> <!-- Email input -->
-      <input type="password" placeholder="Password" /> <!-- Password input -->
-      <button>Sign Up</button> <!-- Submit button for signup -->
+  <!-- Sign Up Form Container (initially hidden on right) -->
+  <div class="form-container sign-up-container">
+    <form id="signupForm">
+      <h2>Create Account</h2>
+      <input type="text" id="signupName" placeholder="Full Name" required />
+      <input type="email" id="signupEmail" placeholder="Email" required />
+      <input type="text" id="signupCompany" placeholder="Company (Optional)" />
+      <select id="signupSecurityLevel" required>
+        <option value="">Select Security Level</option>
+        <option value="Low">Low</option>
+        <option value="Medium">Medium</option>
+        <option value="High">High</option>
+      </select>
+      <textarea id="signupConcerns" placeholder="Security Concerns (Optional)" rows="3"></textarea>
+      <label class="checkbox-label">
+        <input type="checkbox" id="signupNewsletter" />
+        Subscribe to newsletter
+      </label>
+      <button type="submit">Sign Up</button>
+      <div id="signupMessage" class="message"></div>
     </form>
   </div>
   
@@ -109,16 +121,16 @@
       
       <!-- Right overlay panel (visible when sign-in form is shown) -->
       <div class="overlay-panel overlay-right">
-        <h2>Welcome Back!</h2> <!-- Greeting for existing users -->
-        <p>If you already have an account, log in here.</p> <!-- Instructions -->
-        <button class="ghost" id="signInToggle" type="button">Log In</button> <!-- Button to switch to login -->
+        <h2>Welcome!</h2> <!-- Greeting for new users -->
+        <p>If you do not have an account, sign up here.</p> <!-- Instructions -->
+        <button class="ghost" id="signUpToggle" type="button">Sign Up</button> <!-- Button to switch to signup -->
       </div>
       
       <!-- Left overlay panel (visible when sign-up form is shown) -->
       <div class="overlay-panel overlay-left">
-        <h2>Welcome!</h2> <!-- Greeting for new users -->
-        <p>If you do not have an account, sign up.</p> <!-- Instructions -->
-        <button class="ghost" id="signUpToggle" type="button">Sign Up</button> <!-- Button to switch to signup -->
+        <h2>Welcome Back!</h2> <!-- Greeting for existing users -->
+        <p>If you already have an account, log in here.</p> <!-- Instructions -->
+        <button class="ghost" id="signInToggle" type="button">Log In</button> <!-- Button to switch to login -->
       </div>
       
     </div>
@@ -128,20 +140,92 @@
 
 <script>
   // Get references to DOM elements
-  const container = document.getElementById('container'); // Main container element
-  const signUpButton = document.getElementById('signUpToggle'); // Sign up toggle button
-  const signInButton = document.getElementById('signInToggle'); // Sign in toggle button
+  const container = document.getElementById('container');
+  const signUpButton = document.getElementById('signUpToggle');
+  const signInButton = document.getElementById('signInToggle');
+  const signupForm = document.getElementById('signupForm');
+  const loginForm = document.getElementById('loginForm');
 
-  // When sign up button is clicked
+  // Panel switching functionality
   signUpButton.addEventListener('click', () => {
-    console.log('Sign Up clicked'); // Debug message
-    container.classList.add('right-panel-active'); // Add class to slide panels and show sign-up form
+    container.classList.add('right-panel-active');
   });
 
-  // When sign in button is clicked
   signInButton.addEventListener('click', () => {
-    console.log('Sign In clicked'); // Debug message
-    container.classList.remove('right-panel-active'); // Remove class to slide panels back and show sign-in form
+    container.classList.remove('right-panel-active');
+  });
+
+  // Sign Up Form Handler
+  signupForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const formData = {
+      fullName: document.getElementById('signupName').value,
+      email: document.getElementById('signupEmail').value,
+      company: document.getElementById('signupCompany').value,
+      securityLevel: document.getElementById('signupSecurityLevel').value,
+      concerns: document.getElementById('signupConcerns').value,
+      newsletter: document.getElementById('signupNewsletter').checked
+    };
+
+    try {
+      const response = await fetch('/api/users/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+      });
+
+      const result = await response.json();
+      const messageDiv = document.getElementById('signupMessage');
+
+      if (result.success) {
+        messageDiv.innerHTML = '<span style="color: #4CAF50;">✅ Account created successfully!</span>';
+        signupForm.reset();
+        // Auto-switch to login panel after successful signup
+        setTimeout(() => {
+          container.classList.remove('right-panel-active');
+          messageDiv.innerHTML = '';
+        }, 2000);
+      } else {
+        messageDiv.innerHTML = '<span style="color: #f44336;">❌ Registration failed. Please try again.</span>';
+      }
+    } catch (error) {
+      document.getElementById('signupMessage').innerHTML = '<span style="color: #f44336;">❌ Network error. Please try again.</span>';
+    }
+  });
+
+  // Login Form Handler
+  loginForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const email = document.getElementById('loginEmail').value;
+
+    try {
+      const response = await fetch('/api/users/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email })
+      });
+
+      const result = await response.json();
+      const messageDiv = document.getElementById('loginMessage');
+
+      if (result.success) {
+        messageDiv.innerHTML = '<span style="color: #4CAF50;">✅ Welcome back, ' + result.user.full_name + '!</span>';
+        // Redirect to dashboard or home page after successful login
+        setTimeout(() => {
+          window.location.href = 'home.html';
+        }, 1500);
+      } else {
+        messageDiv.innerHTML = '<span style="color: #f44336;">❌ No account found with this email.</span>';
+      }
+    } catch (error) {
+      document.getElementById('loginMessage').innerHTML = '<span style="color: #f44336;">❌ Network error. Please try again.</span>';
+    }
   });
 </script>
     </body>
