@@ -23,14 +23,212 @@
 
         <nav class="navbar">
             <div class="navdiv">
-                <div class="logo"><a href="#"><span class="safe">Safe</span><span class="port">Port</span></a></div>
+                <div class="logo"><a href="home.html"><span class="safe">Safe</span><span class="port">Port</span></a></div>
                 <ul>
                     <li><a href="home.html">Home</a></li>
                     <li><a href="Services.html">Services</a></li>
                     <li><a href="About.html">About</a></li>
-                    <button><a href="get-started.html">Get Started</a></button>
+                    <li><a href="get-started.html" class="nav-button">Get Started</a></li>
                 </ul>
             </div>
         </nav>
+
+        <!-- ADD FLOATING SECURITY ICONS HERE (same as other pages) -->
+        <div class="security-icons">
+            <div class="floating-padlock">
+                <div class="padlock">
+                    <div class="shackle"></div>
+                    <div class="body">
+                        <div class="keyhole"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="floating-padlock">
+                <div class="padlock">
+                    <div class="shackle"></div>
+                    <div class="body">
+                        <div class="keyhole"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="floating-padlock">
+                <div class="padlock">
+                    <div class="shackle"></div>
+                    <div class="body">
+                        <div class="keyhole"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="floating-padlock">
+                <div class="padlock">
+                    <div class="shackle"></div>
+                    <div class="body">
+                        <div class="keyhole"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="floating-padlock">
+                <div class="padlock">
+                    <div class="shackle"></div>
+                    <div class="body">
+                        <div class="keyhole"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MAIN CONTACT CONTENT CONTAINER -->
+        <div class="contact-container">
+            
+            <!-- HERO SECTION - Main heading and intro text -->
+            <section class="contact-hero">
+                <h1>Contact <span class="safe">Safe</span><span class="port">Port</span></h1>
+                <!-- CUSTOMIZE: Change this subtitle to match your business -->
+                <p>Get in touch with our cybersecurity experts. We're here to help protect your business.</p>
+            </section>
+
+            <!-- CONTACT INFORMATION SECTION -->
+            <section class="contact-info-section">
+                <div class="centered-heading">
+                    <h2>Get In Touch</h2>
+                </div>
+                
+                <!-- CONTACT CARDS CONTAINER -->
+                <div class="contact-cards">
+                    
+                    <!-- PHONE CONTACT CARD -->
+                    <div class="contact-card">
+                        <div class="contact-icon">📞</div> <!-- Phone icon -->
+                        <h3>Call Us</h3>
+                        <!-- CUSTOMIZE: Replace with your actual phone number -->
+                        <p><strong>(770) 706-8215</strong></p>
+                        <p>Monday - Friday: 9AM - 6PM</p>
+                        <!-- CUSTOMIZE: Add your actual business hours -->
+                        <p>Emergency Support: 24/7</p>
+                    </div>
+
+                    <!-- EMAIL CONTACT CARD -->
+                    <div class="contact-card">
+                        <div class="contact-icon">✉️</div> <!-- Email icon -->
+                        <h3>Email Us</h3>
+                        <!-- CUSTOMIZE: Replace with your actual email addresses -->
+                        <p><strong>SAFEPORTARCHITECTURE@GMAIL.COM</strong></p>
+                        <p>General inquiries</p>
+                        <p><strong>SAFEPORTARCHITECTURE@GMAIL.COM</strong></p>
+                        <p>Security emergencies</p>
+                    </div>
+
+
+
+                </div>
+            </section>
+
+            <!-- CONTACT FORM SECTION -->
+            <section class="contact-form-section">
+                <div class="centered-heading">
+                    <h2>Send Us a Message</h2>
+                </div>
+                
+                <!-- CONTACT FORM -->
+                <form class="contact-form">
+                    <!-- NAME INPUT -->
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <!-- EMAIL INPUT -->
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <!-- COMPANY INPUT -->
+                    <div class="form-group">
+                        <label for="company">Company Name</label>
+                        <input type="text" id="company" name="company">
+                    </div>
+
+                    <!-- PHONE INPUT -->
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+
+                    <!-- SERVICE TYPE DROPDOWN -->
+                    <div class="form-group">
+                        <label for="service">Service Interest</label>
+                        <select id="service" name="service">
+                            <!-- CUSTOMIZE: Add your actual services -->
+                            <option value="">Select a service...</option>
+                            <option value="security-assessment">Security Assessment</option>
+                            <option value="managed-security">Managed Security</option>
+                            <option value="compliance">Compliance Support</option>
+                            <option value="incident-response">Incident Response</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <!-- MESSAGE TEXTAREA -->
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Tell us about your cybersecurity needs..."></textarea>
+                    </div>
+
+                    <!-- SUBMIT BUTTON -->
+                    <button type="submit" class="contact-submit-btn">Send Message</button>
+                </form>
+            </section>
+
+            <!-- EMERGENCY CONTACT SECTION -->
+            <section class="emergency-contact">
+                <div class="emergency-card">
+                    <h3>🚨 Security Emergency?</h3>
+                    <!-- CUSTOMIZE: Replace with your emergency contact info -->
+                    <p>If you're experiencing a security incident right now:</p>
+                    <p><strong>Emergency Hotline: (555) 911-HELP</strong></p>
+                    <p>Available 24/7 for immediate response</p>
+                </div>
+            </section>
+
+        </div>
+
+        <script>
+            // Handle contact form submission
+            document.querySelector('.contact-form').addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                const formData = {
+                    name: document.getElementById('name').value,
+                    email: document.getElementById('email').value,
+                    company: document.getElementById('company').value,
+                    phone: document.getElementById('phone').value,
+                    service: document.getElementById('service').value,
+                    message: document.getElementById('message').value
+                };
+                
+                try {
+                    const response = await fetch('/api/contact', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(formData)
+                    });
+                    
+                    const result = await response.json();
+                    
+                    if (result.success) {
+                        alert('Thank you! Your message has been sent successfully.');
+                        document.querySelector('.contact-form').reset();
+                    } else {
+                        alert('Sorry, there was an error sending your message. Please try again.');
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('Sorry, there was an error sending your message. Please try again.');
+                }
+            });
+        </script>
     </body>
 </html>

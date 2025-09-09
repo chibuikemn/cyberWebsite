@@ -26,6 +26,18 @@
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+-- Create contact inquiries table
+CREATE TABLE contact_inquiries (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    company VARCHAR(255),
+    phone VARCHAR(20),
+    service_interest VARCHAR(100),
+    message TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
 --insert testing data 1
 INSERT INTO users (
     full_name,

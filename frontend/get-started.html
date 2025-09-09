@@ -1,165 +1,148 @@
-<!DOCTYPE html>
+<!DOCTYPE html> <!-- Declares this as an HTML5 document -->
 <html>
     <head>
         <title>
-            Navigation Bar
+            Get Started - SafePort <!-- Page title shown in browser tab -->
         </title>
-        <link rel="stylesheet" href="style.css"> 
-    <!--the "link" links the css file to the html file -->
+        <link rel="stylesheet" href="style.css"> <!-- Links external CSS file for styling -->
     </head>
 
-     <body>
-        <!-- Floating particles -->
-        <div class="particles">
-            <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
-            <div class="particle" style="left: 20%; animation-delay: 1s;"></div>
-            <div class="particle" style="left: 30%; animation-delay: 2s;"></div>
-            <div class="particle" style="left: 40%; animation-delay: 3s;"></div>
-            <div class="particle" style="left: 50%; animation-delay: 4s;"></div>
-            <div class="particle" style="left: 60%; animation-delay: 5s;"></div>
-            <div class="particle" style="left: 70%; animation-delay: 2s;"></div>
-            <div class="particle" style="left: 80%; animation-delay: 1s;"></div>
-            <div class="particle" style="left: 90%; animation-delay: 3s;"></div>
-        </div>
+<body>
+<!-- Floating particles -->
+<div class="particles">
+  <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+  <div class="particle" style="left: 20%; animation-delay: 1s;"></div>
+  <div class="particle" style="left: 30%; animation-delay: 2s;"></div>
+  <div class="particle" style="left: 40%; animation-delay: 3s;"></div>
+  <div class="particle" style="left: 50%; animation-delay: 4s;"></div>
+  <div class="particle" style="left: 60%; animation-delay: 5s;"></div>
+  <div class="particle" style="left: 70%; animation-delay: 2s;"></div>
+  <div class="particle" style="left: 80%; animation-delay: 1s;"></div>
+  <div class="particle" style="left: 90%; animation-delay: 3s;"></div>
+</div>
 
-        <nav class="navbar">
-            <div class="navdiv">
-                <div class="logo"><a href="#"><span class="safe">Safe</span><span class="port">Port</span></a></div>
-                <ul>
-                    <li><a href="home.html">Home</a></li>
-                    <li><a href="About.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <button><a href="get-started.html">Get Started</a></button>
-                </ul>
-            </div>
-        </nav>
-        <!-- Form content -->
-        <div class="form-container">
-            <h2 class="form-title">Get Started with <span class="safe">Safe</span><span class="port">Port</span></h2>
-            
-            <form id="getStartedForm">
-                <div class="form-group">
-                    <label for="fullName">Full Name</label>
-                    <input type="text" id="fullName" name="fullName" required>
-                </div>
+<!-- Floating security icons -->
+<div class="security-icons">
+  <div class="floating-padlock">
+    <div class="padlock">
+      <div class="shackle"></div>
+      <div class="body">
+        <div class="keyhole"></div>
+      </div>
+    </div>
+  </div>
+  <div class="floating-padlock">
+    <div class="padlock">
+      <div class="shackle"></div>
+      <div class="body">
+        <div class="keyhole"></div>
+      </div>
+    </div>
+  </div>
+  <div class="floating-padlock">
+    <div class="padlock">
+      <div class="shackle"></div>
+      <div class="body">
+        <div class="keyhole"></div>
+      </div>
+    </div>
+  </div>
+  <div class="floating-padlock">
+    <div class="padlock">
+      <div class="shackle"></div>
+      <div class="body">
+        <div class="keyhole"></div>
+      </div>
+    </div>
+  </div>
+  <div class="floating-padlock">
+    <div class="padlock">
+      <div class="shackle"></div>
+      <div class="body">
+        <div class="keyhole"></div>
+      </div>
+    </div>
+  </div>
+</div>
 
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
+<!-- Navigation bar for easy access to other pages -->
+<nav class="navbar">
+  <div class="navdiv">
+    <div class="logo"><a href="home.html"><span class="safe">Safe</span><span class="port">Port</span></a></div>
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="Services.html">Services</a></li>
+      <li><a href="About.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
 
-                <div class="form-group">
-                    <label for="company">Company/Organization</label>
-                    <input type="text" id="company" name="company">
-                </div>
+<!-- Main container that holds both forms and overlay -->
+<div class="auth-container">
+<div class="container" id="container">
+  
+  <!-- Sign Up Form Container (initially hidden on left) -->
+  <div class="form-container sign-up-container">
+    <form>
+      <h2>Create Account</h2> <!-- Form title -->
+      <input type="text" placeholder="Full Name" /> <!-- Text input for name -->
+      <input type="email" placeholder="Email" /> <!-- Email input with validation -->
+      <input type="password" placeholder="Password" /> <!-- Password input (hidden text) -->
+      <button>Sign Up</button> <!-- Submit button for registration -->
+    </form>
+  </div>
+  
+  <!-- Sign In Form Container (initially visible on left) -->
+  <div class="form-container sign-in-container">
+    <form>
+      <h2>Sign In</h2> <!-- Form title -->
+      <input type="email" placeholder="Email" /> <!-- Email input -->
+      <input type="password" placeholder="Password" /> <!-- Password input -->
+      <button>Sign Up</button> <!-- Submit button for signup -->
+    </form>
+  </div>
+  
+  <!-- Overlay Container (blue sliding panel) -->
+  <div class="overlay-container">
+    <div class="overlay"> <!-- Blue gradient background -->
+      
+      <!-- Right overlay panel (visible when sign-in form is shown) -->
+      <div class="overlay-panel overlay-right">
+        <h2>Welcome Back!</h2> <!-- Greeting for existing users -->
+        <p>If you already have an account, log in here.</p> <!-- Instructions -->
+        <button class="ghost" id="signInToggle" type="button">Log In</button> <!-- Button to switch to login -->
+      </div>
+      
+      <!-- Left overlay panel (visible when sign-up form is shown) -->
+      <div class="overlay-panel overlay-left">
+        <h2>Welcome!</h2> <!-- Greeting for new users -->
+        <p>If you do not have an account, sign up.</p> <!-- Instructions -->
+        <button class="ghost" id="signUpToggle" type="button">Sign Up</button> <!-- Button to switch to signup -->
+      </div>
+      
+    </div>
+  </div>
+</div>
+</div>
 
-                <div class="form-group">
-                    <label for="securityLevel">Current Security Level</label>
-                    <select id="securityLevel" name="securityLevel" required>
-                        <option value="">Select your current security level</option>
-                        <option value="basic">Basic - Minimal security measures</option>
-                        <option value="intermediate">Intermediate - Some security protocols</option>
-                        <option value="advanced">Advanced - Comprehensive security</option>
-                        <option value="enterprise">Enterprise - Full security infrastructure</option>
-                    </select>
-                </div>
+<script>
+  // Get references to DOM elements
+  const container = document.getElementById('container'); // Main container element
+  const signUpButton = document.getElementById('signUpToggle'); // Sign up toggle button
+  const signInButton = document.getElementById('signInToggle'); // Sign in toggle button
 
-                <div class="form-group">
-                    <label for="concerns">Primary Security Concerns</label>
-                    <textarea id="concerns" name="concerns" rows="4" placeholder="Tell us about your main security concerns or what you hope to achieve with SafePort..."></textarea>
-                </div>
+  // When sign up button is clicked
+  signUpButton.addEventListener('click', () => {
+    console.log('Sign Up clicked'); // Debug message
+    container.classList.add('right-panel-active'); // Add class to slide panels and show sign-up form
+  });
 
-                <div class="form-group">
-                    <div class="checkbox-group">
-                        <input type="checkbox" id="newsletter" name="newsletter" value="yes">
-                        <label for="newsletter">Subscribe to security updates and newsletters</label>
-                    </div>
-                </div>
-
-                <button type="submit" class="submit-btn">Start Security Assessment</button>
-            </form>
-
-            <div id="statusMessage" class="status-message"></div>
-        </div>
-
-        <script>
-            // Form submission handler
-            document.getElementById('getStartedForm').addEventListener('submit', async function(e) {
-                e.preventDefault();
-                
-                const statusMessage = document.getElementById('statusMessage');
-                const formData = new FormData(this);
-                
-                // Convert FormData to regular object
-                const userData = {
-                    fullName: formData.get('fullName'),
-                    email: formData.get('email'),
-                    company: formData.get('company'),
-                    securityLevel: formData.get('securityLevel'),
-                    concerns: formData.get('concerns'),
-                    newsletter: formData.get('newsletter') === 'yes',
-                    timestamp: new Date().toISOString()
-                };
-
-                try {
-                    // This is where you'd make your API call to your backend
-                    // Example using fetch to your Node.js/Express backend:
-                    
-                    const response = await fetch('/api/users/register', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify(userData)
-                    });
-
-                    if (response.ok) {
-                        const result = await response.json();
-                        
-                        // Show success message
-                        statusMessage.textContent = 'Registration successful! We\'ll contact you soon to begin your security assessment.';
-                        statusMessage.className = 'status-message status-success';
-                        statusMessage.style.display = 'block';
-                        
-                        // Reset form
-                        this.reset();
-                        
-                        // Optional: Redirect after success
-                        setTimeout(() => {
-                            window.location.href = 'dashboard.html'; // or wherever you want to redirect
-                        }, 3000);
-                        
-                    } else {
-                        throw new Error('Registration failed');
-                    }
-                    
-                } catch (error) {
-                    console.error('Error:', error);
-                    
-                    // Show error message
-                    statusMessage.textContent = 'Registration failed. Please try again or contact support.';
-                    statusMessage.className = 'status-message status-error';
-                    statusMessage.style.display = 'block';
-                }
-            });
-
-            // Hide status message when user starts typing again
-            document.querySelectorAll('input, select, textarea').forEach(field => {
-                field.addEventListener('input', () => {
-                    const statusMessage = document.getElementById('statusMessage');
-                    statusMessage.style.display = 'none';
-                });
-            });
-
-            document.addEventListener('DOMContentLoaded', () => {
-    const submitBtn = document.querySelector('.submit-btn');
-    if (submitBtn) {
-        submitBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            submitBtn.classList.add('locked');
-        });
-    }
-});
-        </script>
+  // When sign in button is clicked
+  signInButton.addEventListener('click', () => {
+    console.log('Sign In clicked'); // Debug message
+    container.classList.remove('right-panel-active'); // Remove class to slide panels back and show sign-in form
+  });
+</script>
     </body>
 </html>
